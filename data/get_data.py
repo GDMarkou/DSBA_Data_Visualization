@@ -15,10 +15,11 @@ def get_data():
 
         # Convert JSON data to DataFrame
         df = pd.DataFrame(data)
+        print("the df is length", len(df))
 
     else:
         print('Failed to fetch data from GitHub:', response.status_code)
         df = None
     return df
 
-print(get_data().head())
+#print(get_data().head())
