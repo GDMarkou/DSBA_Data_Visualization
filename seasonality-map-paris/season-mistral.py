@@ -5,7 +5,8 @@ import calendar
 accidents = pd.read_csv("/Users/oscarmeurer/Downloads/accidentologie0.csv", sep=";")
 
 def plot_seasonality_map(accidents_df):
-    """ accident is a datadrame"""
+    """ Function that takes into input the raw accident dataframe
+    Returns a figure that can be used in a Streamlit object."""
 
     def create_age_groups(df):
         data = df.copy()
@@ -162,6 +163,7 @@ def plot_seasonality_map(accidents_df):
     )
 
 
-    fig.show()
+    #fig.show()
+return fig
 
-plot_seasonality_map(accidents)
+figure  = plot_seasonality_map(accidents)
