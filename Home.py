@@ -20,7 +20,7 @@ accidents = pd.read_csv("data/accidentologie0.csv", sep=";")
 
 # Page Display Logic
 
-st.title("Welcome to the Paris Incident Explorer 🛣️🚦")
+st.title("Welcome to the Paris Incident Explorer 🚦🛣️")
 st.write("In this dashboard, we give you full power to explore and understand how, where, and when road accidents occur in Paris. Specifically, we prepared 3 different interactive visualization that include analysis of the different districts, modes of transportation, and seasonality. You can access the following from the pages tab.")
 
 st.title("Dataset Exploration 📊")
