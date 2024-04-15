@@ -12,8 +12,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.title("Analytics on Accident Data")
-st.text("In this section we are exploring how the different modes of transportation that were involved in accidents, evolved over the years. You can filter by ")
+st.title("Evolution by mode of transport (2017-2022)")
+st.write("In this section, we delve into the evolution of transportation modes involved in accidents over the years. We offer interactive filters to enhance your exploration, allowing you to refine the data based on age, gender, neighborhood, year, and transportation mode. This feature enables a deeper, more personalized analysis of the trends and patterns that have shaped transportation safety across different demographics and time periods.")
 
 # Data Loading
 accidents = pd.read_csv("data/accidentologie0.csv", sep=";")
