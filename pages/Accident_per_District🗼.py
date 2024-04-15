@@ -40,10 +40,8 @@ df_accidents["Tranche d'age"] = df_accidents["Tranche d'age"].map(age_group_tran
 
 # Assume you have latitude and longitude for the center of each arrondissement in the df_agg DataFrame.
 # Start your Streamlit app.
-st.title('Accidents in Paris')
-
-
-st.write("Filter by Age Group")
+st.title('Mapping accidents by neighbourhoods and mode of transport according to age groups')
+st.write("To understand where accidents are more likely to occur and which population is most vulnerable, we have chosen to plot the data aggregated by neighbourhood on a map. As you can see some neighbourhoods (especially in the outer Paris near the boulevard Périphérique) have a higher concentration of accidents. Moreover, there are several differences between age groups that catch the eye. Indeed, younger and older people are more likely to be involved in accidents as pedestrians or by riding a bicycle while people from 25 to 50 years old it is with 2-wheel or 4-wheel vehicles. You can also clearly see a large spike at 25 which corresponds more or less to the average year of obtaining a driver’s license. Therefore, people with less experience in their car are, as expected, more likely to have accidents.")
 selected_age_brackets = st.radio(
     "Select Age Group",
     ['All'] + sorted(df_accidents["Tranche d'age"].dropna().unique().tolist()), horizontal=True
