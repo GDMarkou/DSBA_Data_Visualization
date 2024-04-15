@@ -4,8 +4,16 @@ import altair as alt
 import plotly.express as px
 
 
+# Page Configuration
+st.set_page_config(
+    page_title="Paris Incident Exploration",
+    page_icon="🇫🇷",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 st.title("Analytics on Accident Data")
-st.text("A streamgraph")
+st.text("In this section we are exploring how the different modes of transportation that were involved in accidents, evolved over the years. You can filter by ")
 
 # Data Loading
 accidents = pd.read_csv("data/accidentologie0.csv", sep=";")
@@ -41,7 +49,7 @@ with col1:
 with col2:
     gravity_filter = st.multiselect('Select Gravity', options=list(accidents['Gravité'].unique()), default=list(accidents['Gravité'].unique()))
 
-arrondissement_filter = st.multiselect('Select Arrondissement', options=sorted(list(accidents['Arrondissement'].unique())), default=sorted(list(accidents['Arrondissement'].unique())))
+arrondissement_filter = st.multiselect('Select Neighborhood', options=sorted(list(accidents['Arrondissement'].unique())), default=sorted(list(accidents['Arrondissement'].unique())))
 
 # Filter data based on selection
 filtered_data = accidents[(accidents['Gravité'].isin(gravity_filter)) & (accidents['Genre'].isin(genre_filter)) & (accidents['Arrondissement'].isin(arrondissement_filter))]

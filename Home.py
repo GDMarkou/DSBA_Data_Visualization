@@ -15,27 +15,15 @@ st.set_page_config(
 if 'page' not in st.session_state:
     st.session_state.page = 'Home'
 
-# Sidebar for Navigation
-with st.sidebar:
-    st.title('Home Navigator')
-    # Radio buttons for page navigation
-    page = st.radio("Welcome to the home page. Here you can take a deep dive into the improta", ('Introduction', 'Importance of the Problem', 'Dataset'))
-
 # Data Loading
 accidents = pd.read_csv("data/accidentologie0.csv", sep=";")
 
 # Page Display Logic
-if page == 'Introduction':
-    st.title("Welcome to the Paris Incident Explorer!")
-    st.text("In this dashboard, we present to you the accidents that occurred in Paris.")
-    
-elif page == 'Importance of the Problem':
-    st.title("Importance of the Problem")
-    
 
+st.title("Welcome to the Paris Incident Explorer 🛣️🚦")
+st.write("In this dashboard, we give you full power to explore and understand how, where, and when road accidents occur in Paris. Specifically, we prepared 3 different interactive visualization that include analysis of the different districts, modes of transportation, and seasonality. You can access the following from the pages tab.")
 
-elif page == 'Dataset':
-    st.title("Dataset")
-    st.text("The Dataframe bellow ")
-    st.write(accidents)  # Example of displaying a dataframe
+st.title("Dataset Exploration 📊")
+st.write("The dataset titled 'Paris Traffic Accident Data' spans from 2017 to 2022 and offers a comprehensive examination of traffic accidents within Paris. It is structured such that each row represents a unique accident, detailing the type of vehicle involved, the accident date, location, and demographic information such as age and gender of the individuals involved, along with the severity and descriptions of each incident. This dataset is sourced from official reports by the Paris Police Prefecture and is curated to ensure accuracy and minimize human errors, as stated on the Open Data Paris website. The data is crucial for analyzing patterns, contributing factors, and areas of concern related to road safety in Paris. This analysis aims to aid in developing targeted interventions by authorities to decrease accident rates and enhance road safety.")
+st.write(accidents)  # Example of displaying a dataframe
     

@@ -6,7 +6,13 @@ import pandas as pd
 import streamlit as st
 import pydeck as pdk
 
-st.set_page_config(layout="wide")
+# Page Configuration
+st.set_page_config(
+    page_title="Paris Incident Exploration",
+    page_icon="🇫🇷",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 df_accidents = pd.read_csv('data/accidentologie0.csv', sep=';')
 
