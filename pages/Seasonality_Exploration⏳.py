@@ -42,7 +42,7 @@ monthly_accidents = monthly_accidents.sort_values(by=['Year', 'Month'])
 
 
 
-st.title("Seasonality Map")
+st.title("Exploration of seasonal effect on accidents")
 st.text("Graph that plots for the whole year, month by month, for the selected age group, the density map of accidents.")
 
 accidents = create_age_groups(accidents)
