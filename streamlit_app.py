@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import plotly.express as px
+from data.get_data import *
 
 # Page Configuration
 st.set_page_config(
@@ -22,7 +23,8 @@ with st.sidebar:
     page = st.radio("Select a page to explore", ('Introduction', 'Paris Road Accident', 'Detailed Data View', 'Analytics'))
 
 # Data Loading
-accidents = pd.read_csv("data/accidentologie0.csv", sep=";")
+#accidents = pd.read_csv("data/accidentologie0.csv", sep=";")
+accidents = get_data() #retrieving the data from a function in the data folder
 accidents['Date'] = pd.to_datetime(accidents['Date'])
 accidents['Mode'] = accidents['Mode'].replace({
     '2 Roues Motorisées': '2-Wheel Motorbike',
