@@ -22,4 +22,28 @@ def get_data():
         df = None
     return df
 
-#print(get_data().head())
+print(get_data().head())
+
+
+def create_age_groups(df):
+    data = df.copy()
+
+    def create_age_group(age):
+        if age <= 18:
+            return '0-18'
+        elif 19 <= age <= 25:
+            return '19-25'
+        elif 26 <= age <= 35:
+            return '26-35'
+        elif 36 <= age <= 45:
+            return '36-45'
+        elif 46 <= age <= 55:
+            return '46-55'
+        elif 56 <= age <= 65:
+            return '56-65'
+        else:
+            return '65+'
+
+    data['Age_Group'] = data['Age'].apply(create_age_group)
+
+    return data
